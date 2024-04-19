@@ -1,0 +1,69 @@
+---
+whiskers:
+  version: "2.0.0"
+---
+<h3 align="center">
+	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
+	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
+	Catppuccin for <a href="https://github.com/lotabout/skim">skim</a>
+	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
+</h3>
+
+<p align="center">
+	<a href="https://github.com/catppuccin/skim/stargazers"><img src="https://img.shields.io/github/stars/gabrielmagno/skim?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
+	<a href="https://github.com/catppuccin/skim/issues"><img src="https://img.shields.io/github/issues/gabrielmagno/skim?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
+	<a href="https://github.com/catppuccin/skim/contributors"><img src="https://img.shields.io/github/contributors/gabrielmagno/skim?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
+</p>
+
+<p align="center">
+	<img src="./assets/preview.webp"/>
+</p>
+
+## Usage
+
+1. Choose one of the flavour palettes below.
+2. Copy the corresponding snippet that adds the colors specification to the `SKIM_DEFAULT_OPTIONS` environment variable.
+3. Add the snippet to your shell startup script (e.g. `~/.profile`, `~/.bashrc`, `~/.zshrc`, etc).
+
+{%- for id, flavor in flavors -%}
+{%- set palette = flavor.colors %}
+
+<details>
+{%- if id == "latte" %}
+<summary>🌻 Latte</summary>
+{%- elif id == "frappe" %}
+<summary>🪴 Frappé</summary>
+{%- elif id == "macchiato" %}
+<summary>🌺 Macchiato</summary>
+{%- else %}
+<summary>🌿 Mocha</summary>
+{%- endif %}
+
+bash/zsh:
+```sh
+export SKIM_DEFAULT_OPTIONS="$SKIM_DEFAULT_OPTIONS \
+--color=fg:#{{palette.text.hex}},bg:#{{palette.base.hex}},matched:#{{palette.surface0.hex}},matched_bg:#{{palette.flamingo.hex}},current:#{{palette.text.hex}},current_bg:#{{palette.surface1.hex}},current_match:#{{palette.base.hex}},current_match_bg:#{{palette.rosewater.hex}},spinner:#{{palette.green.hex}},info:#{{palette.mauve.hex}},prompt:#{{palette.blue.hex}},cursor:#{{palette.red.hex}},selected:#{{palette.maroon.hex}},header:#{{palette.teal.hex}},border:#{{palette.overlay0.hex}}"
+```
+
+<img src="assets/{{id}}.webp"/>
+
+</details>
+{%- endfor %}
+
+## 💝 Thanks to
+
+- [Gabriel Magno](https://github.com/gabrielmagno)
+
+&nbsp;
+
+<p align="center">
+	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true" />
+</p>
+
+<p align="center">
+	Copyright &copy; 2021-present <a href="https://github.com/catppuccin" target="_blank">Catppuccin Org</a>
+</p>
+
+<p align="center">
+	<a href="https://github.com/catppuccin/catppuccin/blob/main/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a>
+</p>
